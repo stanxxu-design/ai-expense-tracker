@@ -15,6 +15,8 @@ npm run dev
 
 環境變數不可提交至版本控制。工作階段使用 HttpOnly Cookie，登入有效期限為 7 天。
 
+`/settings` 提供必要伺服器環境變數的名稱、用途與 Vercel 設定連結。本機開發時，頁面可將輸入值安全地寫入被 Git 忽略的 `.env.local`；正式部署不會啟用此寫入 API，請在 Vercel Environment Variables 設定雲端機密。
+
 ## API
 
 - `POST /api/auth/register`：註冊；可傳入 `inviteCode` 加入家庭。

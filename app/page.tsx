@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useState } from "react";
+import Link from "next/link";
 
 type AccountSession = {
   user: {
@@ -312,15 +313,23 @@ export default function Home() {
               用日常語句記帳，和家人一起查看每筆支出。
             </p>
           </div>
-          {session && (
-            <button
-              type="button"
-              onClick={handleLogout}
+          <div className="flex items-center gap-2">
+            <Link
+              href="/settings"
               className="rounded-xl border border-stone-200 bg-white px-4 py-2 text-sm font-medium text-stone-700 transition hover:bg-stone-50"
             >
-              登出
-            </button>
-          )}
+              設定
+            </Link>
+            {session && (
+              <button
+                type="button"
+                onClick={handleLogout}
+                className="rounded-xl border border-stone-200 bg-white px-4 py-2 text-sm font-medium text-stone-700 transition hover:bg-stone-50"
+              >
+                登出
+              </button>
+            )}
+          </div>
         </header>
 
         {isCheckingSession ? (
